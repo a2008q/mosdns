@@ -68,6 +68,10 @@ jobs:
           GOOS: linux
           GOARCH: ${{ matrix.goarch }}
         run: |
+          if [ "${{ matrix.goarch }}" = "arm" ]; then
+            export GOARM="${{ matrix.goarm }}"
+            : "${GOARM:=7}"
+          fi
           go build \
             -trimpath \
             -ldflags "-s -w -X main.version=v${PACKAGE_VERSION}" \
@@ -190,6 +194,10 @@ jobs:
           GOOS: linux
           GOARCH: ${{ matrix.goarch }}
         run: |
+          if [ "${{ matrix.goarch }}" = "arm" ]; then
+            export GOARM="${{ matrix.goarm }}"
+            : "${GOARM:=7}"
+          fi
           go build \
             -trimpath \
             -ldflags "-s -w -X main.version=v${PACKAGE_VERSION}" \
