@@ -1,0 +1,35 @@
+Package: luci-app-mosdns-t
+Version: 0.7.3-r2
+Depends: libc, luci-base, mosdns-t
+Source: feeds/base/luci-app-mosdns-t
+SourceName: luci-app-mosdns-t
+License: GPL-3.0-only
+Section: luci
+SourceDateEpoch: 1758316778
+Maintainer: jasonxtt
+Architecture: arm_cortex-a7_neon-vfpv4
+Installed-Size: 40960
+Filename: luci-app-mosdns-t_0.7.3-r2_arm_cortex-a7_neon-vfpv4.ipk
+Size: 8009
+SHA256sum: e45459decad0c49eca49a3f59b3459f8f1ad6a1da6925a274a2ec25ad99286a2
+Description:  LuCI service controls, targeted apk upgrades and WebUI launcher for MosDNS-T.
+
+Package: mosdns-t
+Version: 0.7.3-r2
+Depends: libc, ca-bundle
+Source: feeds/base/mosdns-t
+SourceName: mosdns-t
+License: GPL-3.0-only
+Section: net
+SourceDateEpoch: 1758316778
+URL: https://github.com/jasonxtt/mosdns
+Maintainer: jasonxtt
+Architecture: arm_cortex-a7_neon-vfpv4
+Installed-Size: 24115200
+Filename: mosdns-t_0.7.3-r2_arm_cortex-a7_neon-vfpv4.ipk
+Size: 9267129
+SHA256sum: 3aaf3f1419f2ab98cb39061d5ba28b39b75b2b91ba79556597ca10fb31795b1e
+Description:  MosDNS-T packaged for OpenWrt with procd, dnsmasq integration and an
+ embedded WebUI. Program upgrades are managed through LuCI or the system
+ package manager.
+
