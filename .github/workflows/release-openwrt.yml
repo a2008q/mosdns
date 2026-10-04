@@ -148,6 +148,11 @@ jobs:
             goarch: arm64
             sdk_path: rockchip/armv8
             sdk_file: openwrt-sdk-24.10.7-rockchip-armv8_gcc-13.3.0_musl.Linux-x86_64.tar.zst
+          - repo_arch: arm_cortex-a7_neon-vfpv4
+            goarch: arm
+            goarm: 7
+            sdk_path: sunxi/cortexa7
+            sdk_file: openwrt-sdk-24.10.3-sunxi-cortexa7_gcc-13.3.0_musl_eabi.Linux-x86_64.tar.zst
     steps:
       - uses: actions/checkout@v6
 
