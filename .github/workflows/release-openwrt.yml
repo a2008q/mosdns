@@ -143,19 +143,23 @@ jobs:
           - repo_arch: x86_64
             goarch: amd64
             sdk_path: x86/64
+            sdk_release: "24.10.7"
             sdk_file: openwrt-sdk-24.10.7-x86-64_gcc-13.3.0_musl.Linux-x86_64.tar.zst
           - repo_arch: aarch64_cortex-a53
             goarch: arm64
             sdk_path: mediatek/filogic
+            sdk_release: "24.10.7"
             sdk_file: openwrt-sdk-24.10.7-mediatek-filogic_gcc-13.3.0_musl.Linux-x86_64.tar.zst
           - repo_arch: aarch64_generic
             goarch: arm64
             sdk_path: rockchip/armv8
+            sdk_release: "24.10.7"
             sdk_file: openwrt-sdk-24.10.7-rockchip-armv8_gcc-13.3.0_musl.Linux-x86_64.tar.zst
           - repo_arch: arm_cortex-a7_neon-vfpv4
             goarch: arm
             goarm: 7
             sdk_path: sunxi/cortexa7
+            sdk_release: "24.10.3"
             sdk_file: openwrt-sdk-24.10.3-sunxi-cortexa7_gcc-13.3.0_musl_eabi.Linux-x86_64.tar.zst
     steps:
       - uses: actions/checkout@v6
@@ -209,7 +213,7 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y zstd
-          wget -q "https://downloads.openwrt.org/releases/24.10.7/targets/${{ matrix.sdk_path }}/${{ matrix.sdk_file }}" -O sdk.tar.zst
+          wget -q "https://downloads.openwrt.org/releases/${{ matrix.sdk_release }}/targets/${{ matrix.sdk_path }}/${{ matrix.sdk_file }}" -O sdk.tar.zst
           mkdir sdk
           tar --zstd -xf sdk.tar.zst -C sdk --strip-components=1
 
